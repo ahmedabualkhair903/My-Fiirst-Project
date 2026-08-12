@@ -3,7 +3,7 @@ import "./globals.css";
 
 
 import Footer from "@/components/Footer/footer";
-import Header from "@/components/Header/header";
+import Header from "@/components/header/header";
 import { AuthProvider } from "@/context/AuthContext";
 
 export const metadata: Metadata = {
