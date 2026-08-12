@@ -9,7 +9,7 @@ import { FaSearch } from "react-icons/fa";
 
 import Navbar from "../Navbar/Navbar";
 
-const header = () => {
+const Header = () => {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
 
@@ -205,4 +205,4 @@ const header = () => {
   );
 };
 
-export default header;
+export default Header;
