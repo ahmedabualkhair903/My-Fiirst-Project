@@ -1,25 +1,55 @@
-"use client"
 
-import Link from "next/link"
+"use client";
 
-interface IErrorPageProps {
-    error: Error,
-    reset: () => void,
-}
+import { useEffect } from "react";
 
+type ErrorPageProps = {
+  error: Error & {
+    digest?: string;
+  };
 
+  reset: () => void;
+};
 
-const error = ({ error, reset }: IErrorPageProps) => {
+const ErrorPage = ({
+  error,
+  reset,
+}: ErrorPageProps) => {
+
+  useEffect(() => {
+    console.error(error);
+  }, [error]);
+
   return (
-    <>
-      <div className="flex flex-col items-center justify-center gap-8 mt-10">
-        <h1 className="text-red-700 text-2xl font-bold">Error</h1>
-        <p>{ error?.message}</p>
-        <button className="bg-blue-500 hover:bg-blue-700 text-white rounded-full px-4 py-2">Try Again</button>
-        <Link href={"/"} className="bg-blue-400 px-4 py-2 rounded-md hover:bg-blue-500 text-white">Back Home</Link>
-      </div>
-    </>
-  )
-}
+    <main className="min-h-[70vh] flex items-center justify-center px-4">
 
-export default error
+      <div className="text-center max-w-lg">
+
+        <p className="text-6xl font-bold text-red-500 mb-4">
+          Error
+        </p>
+
+        <h1 className="text-3xl font-bold mb-3">
+          Something went wrong
+        </h1>
+
+        <p className="text-gray-500 mb-8">
+          An unexpected error occurred.
+          Please try again.
+        </p>
+
+        <button
+          onClick={() => reset()}
+          className="bg-black text-white px-6 py-3 rounded-lg hover:opacity-80 transition"
+        >
+          Try Again
+        </button>
+
+      </div>
+
+    </main>
+  );
+};
+
+export default ErrorPage;
+

@@ -1,15 +1,21 @@
+
 const Loading = () => {
   return (
-    <div role="status" className="max-w-sm animate-pulse">
-      <div className="h-2.5 w-48 rounded-full bg-neutral-quaternary mb-4"></div>
-      <div className="h-2 max-w-90 rounded-full bg-neutral-quaternary mb-2.5"></div>
-      <div className="h-2 rounded-full bg-neutral-quaternary mb-2.5"></div>
-      <div className="h-2 max-w-82.5 rounded-full bg-neutral-quaternary mb-2.5"></div>
-      <div className="h-2 max-w-75 rounded-full bg-neutral-quaternary mb-2.5"></div>
-      <div className="h-2 max-w-90 rounded-full bg-neutral-quaternary"></div>
-      <span className="sr-only">Loading...</span>
-    </div>
+    <main className="min-h-[70vh] flex items-center justify-center">
+
+      <div className="flex flex-col items-center gap-4">
+
+        <div className="w-12 h-12 border-4 border-gray-200 border-t-black rounded-full animate-spin" />
+
+        <p className="text-gray-500">
+          Loading...
+        </p>
+
+      </div>
+
+    </main>
   );
 };
 
 export default Loading;
+

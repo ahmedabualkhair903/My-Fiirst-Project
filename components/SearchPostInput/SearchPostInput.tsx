@@ -1,24 +1,45 @@
-"use client"
 
+"use client";
 
-import { useState } from 'react'
-const SearchPostInput = () => {
-  const [searchText, setSearchText] = useState("")
-    const handleSubmit =(e: React.FormEvent) =>{
-    e.preventDefault()
-     console.log({ searchText })
-    };
+import { FaSearch } from "react-icons/fa";
+
+type SearchPostInputProps = {
+  value: string;
+  onChange: (value: string) => void;
+};
+
+const SearchPostInput = ({
+  value,
+  onChange,
+}: SearchPostInputProps) => {
   return (
-       <form onSubmit={handleSubmit} className="my-4 mx-auto w-full md:w-2/3 ">
-          <input
-           type="search"
-            id="search"
-            placeholder="Enter Search Text"
-            value={searchText}
-            onChange={(e) => setSearchText(e.target.value)}
-            className="w-full px-3 py-2 border border-gray-200 rounded-lg bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-300"/>   
-       </form>
-  )
-}
+    <div className="w-full">
+      <label
+        htmlFor="search"
+        className="mb-3 block text-sm font-semibold text-slate-700"
+      >
+        Search Posts
+      </label>
 
-export default SearchPostInput
+      <div className="relative">
+        {/* Search Icon */}
+        <div className="pointer-events-none absolute left-4 top-1/2 flex -translate-y-1/2 items-center justify-center text-slate-400">
+          <FaSearch className="text-sm" />
+        </div>
+
+        {/* Input */}
+        <input
+          id="search"
+          type="text"
+          value={value}
+          onChange={(e) => onChange(e.target.value)}
+          placeholder="Search by title or content..."
+          className="w-full rounded-xl border border-slate-200 bg-slate-50 py-3.5 pl-11 pr-4 text-sm text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-400 hover:border-slate-300 focus:border-blue-500 focus:bg-white focus:ring-4 focus:ring-blue-500/10"
+        />
+      </div>
+    </div>
+  );
+};
+
+export default SearchPostInput;
+
