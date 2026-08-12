@@ -7,7 +7,7 @@ import { IoIosMenu } from "react-icons/io";
 import { IoClose } from "react-icons/io5";
 import { FaSearch } from "react-icons/fa";
 
-import Navbar from "../Navbar/Navbar";
+import Navbar from "../navbar/navbar";
 
 const header = () => {
   const pathname = usePathname();
@@ -99,12 +99,12 @@ const header = () => {
                 Login
               </Link>
 
-                <Link
+              <Link
                 href="/register"
                 className="rounded-xl bg-blue-600 px-5 py-2.5 text-sm font-semibold !text-white shadow-md shadow-blue-600/20 transition-all duration-200 hover:-translate-y-0.5 hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-600/25 active:translate-y-0"
-                >
+              >
                 Register
-             </Link>
+              </Link>
             </div>
           </div>
 

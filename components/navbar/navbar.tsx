@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-const Navbar = () => {
+const navbar = () => {
   const pathname = usePathname();
 
   const links = [
@@ -60,4 +60,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default navbar;
